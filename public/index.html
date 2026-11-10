@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-dark min-vh-100 text-light">
+    <div class="container py-4" style="max-width: 800px;">
+        <h2 class="mb-4">Expense Tracker</h2>
+        <div id="message" role="alert"></div>
+
+        <div class="mb-3">
+            <label for="category" class="form-label">Category (I = Income, E = Expense)</label>
+            <input id="category" class="form-control" type="text" maxlength="1" placeholder="I or E">
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input id="date" class="form-control" type="date">
+        </div>
+        <div class="mb-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input id="amount" class="form-control" type="number" min="0.01" step="0.01" placeholder="0.00">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description (optional)</label>
+            <input id="description" class="form-control" type="text" maxlength="255">
+        </div>
+        <button class="btn btn-primary w-100" type="button" id="add-entry">Add Entry</button>
+
+        <hr class="my-4">
+
+        <h4>View Entries</h4>
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <label for="from-date" class="form-label">From</label>
+                <input id="from-date" class="form-control" type="date">
+            </div>
+            <div class="col-md-6">
+                <label for="to-date" class="form-label">To</label>
+                <input id="to-date" class="form-control" type="date">
+            </div>
+        </div>
+        <button class="btn btn-primary w-100" type="button" id="view-entry">View Entries</button>
+
+        <div class="table-responsive mt-4">
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="entries-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="Expense.js"></script>
+</body>
+</html>
